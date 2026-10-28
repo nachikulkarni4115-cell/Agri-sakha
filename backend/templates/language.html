@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#060d09">
+
+    <title>AgriSakha · Language</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.add("js");
+            try {
+                var saved = localStorage.getItem("agrisakha-theme");
+                if (saved === "light" || saved === "dark") {
+                    root.setAttribute("data-theme", saved);
+                }
+            } catch (error) { /* storage blocked: keep default */ }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="language-page">
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10.5 10 5 20 5c0 10-5.5 15-14 15"/><path d="M5 19c3-4.5 6.5-7 10.5-8.5"/></symbol>
+            <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+        </defs>
+    </svg>
+
+    <div class="bg-fx" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+        <span class="bg-grid"></span>
+    </div>
+
+    <main class="language-container">
+
+        <div class="language-card glass">
+
+            <div class="language-brand">
+
+                <span class="brand-mark brand-mark-lg">
+                    <svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg>
+                </span>
+
+                <h1>AgriSakha</h1>
+
+                <p>Smart Crop Health Assistant</p>
+
+            </div>
+
+
+            <div class="language-content">
+
+                <h2>Choose your language</h2>
+
+                <p class="language-sub">
+                    <span lang="mr">तुमची भाषा निवडा</span>
+                    <span class="sep">·</span>
+                    <span lang="hi">अपनी भाषा चुनें</span>
+                </p>
+
+                <form method="POST" action="{{ url_for('set_language') }}" class="language-form">
+
+                    <button type="submit" name="language" value="en" class="language-option">
+                        <span class="language-native" lang="en">English</span>
+                        <span class="language-arrow"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                    </button>
+
+                    <button type="submit" name="language" value="mr" class="language-option">
+                        <span class="language-native" lang="mr">मराठी</span>
+                        <span class="language-arrow"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                    </button>
+
+                    <button type="submit" name="language" value="hi" class="language-option">
+                        <span class="language-native" lang="hi">हिन्दी</span>
+                        <span class="language-arrow"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                    </button>
+
+                </form>
+
+            </div>
+
+            <p class="language-footer">AgriSakha · AI-powered crop health assistance</p>
+
+        </div>
+
+    </main>
+
+    <script>
+
+        document.querySelectorAll(".language-option").forEach(function (button) {
+
+            button.addEventListener("click", function (event) {
+
+                event.preventDefault();
+
+                document.body.classList.add("leaving");
+
+                var form = button.closest("form");
+
+                window.setTimeout(function () {
+                    form.requestSubmit(button);
+                }, 260);
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{
+    "num_classes": 24,
+    "class_names": [
+        "Cotton Bacterial Blight",
+        "Cotton Curl Virus",
+        "Cotton Healthy Leaf",
+        "Ground healthy leaf",
+        "Ground late leaf spot",
+        "Ground nutrition deficiency",
+        "Maize leaf spot",
+        "Maize streak virus",
+        "Potato Early_Blight",
+        "Potato Healthy",
+        "Potato Late_Blight",
+        "Rice___Brown_Spot",
+        "Rice___Healthy",
+        "Rice___Leaf_Blast",
+        "Soyabean Caterpillar",
+        "Soyabean Diabrotica speciosa",
+        "Soyabean Healthy",
+        "Wheat___Brown_Rust",
+        "Wheat___Healthy",
+        "Wheat___Yellow_Rust",
+        "healthy_maize",
+        "healthy_tomato",
+        "leaf blight_tomato",
+        "septoria leaf spot_tomato"
+    ],
+    "image_size": [
+        224,
+        224
+    ],
+    "input_range": "0_to_1",
+    "model": "AgriSakha_MobileNetV2"
+}

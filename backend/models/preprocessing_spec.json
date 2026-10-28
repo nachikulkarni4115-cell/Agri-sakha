@@ -1,0 +1,15 @@
+{
+    "image_size": [
+        224,
+        224
+    ],
+    "channels": 3,
+    "input_dtype": "float32",
+    "input_scaling": "pixel_value / 255.0",
+    "model_preprocessing": "Rescaling(2.0, -1.0)",
+    "final_range": [
+        -1.0,
+        1.0
+    ],
+    "model": "AgriSakha_MobileNetV2"
+}
