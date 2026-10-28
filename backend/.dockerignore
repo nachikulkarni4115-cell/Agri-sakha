@@ -1,0 +1,15 @@
+.env
+.env.*
+venv/
+.venv/
+**/venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.log
+.git/
+.pytest_cache/
+.mypy_cache/
+uploads/
+**/uploads/
